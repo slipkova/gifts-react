@@ -1,0 +1,40 @@
+h1 {
+  color: #452600;
+}
+
+.list-name {
+  text-align: center;
+  padding: 100px;
+}
+
+.item-in-list {
+  border: 1px solid #aaaaaa;
+  padding: 15px;
+  margin: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  position: relative;
+}
+
+.item-name {
+  color: #452600;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.del-item-btn {
+  display: inline;
+  position: absolute;
+  right: 5px;
+  top: 8px;
+}
+
+.add-item-btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 22px;
+  margin-top: 20px;
+}
+
+/*# sourceMappingURL=styles.css.map */
