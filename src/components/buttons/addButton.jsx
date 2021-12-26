@@ -7,7 +7,7 @@ export default class AddButton  extends Component{
     render(){
         return (
             <button className={"add-item-btn"} onClick={this.props.onClick}>
-                <i className={"fab fa-jedi-order"}></i>
+                <i className={"fab fa-jedi-order"} />
             </button>
         );
     }

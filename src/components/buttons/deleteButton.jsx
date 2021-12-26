@@ -7,7 +7,7 @@ export default class DeleteButton  extends Component{
     render(){
             return(
                 <button className={"btn del-item-btn"} onClick={this.props.onDelete}>
-                    <i className={"far fa-times-circle"}></i>
+                    <i className={"far fa-times-circle"} />
                 </button>
             );
     }

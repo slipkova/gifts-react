@@ -4,12 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css'
-import ItemInList from "./components/pages/itemsInList";
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <ItemInList />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

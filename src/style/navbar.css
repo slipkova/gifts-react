@@ -1,0 +1,44 @@
+div.nav {
+  width: 100%;
+  padding: 0;
+  overflow: visible;
+  background-color: #4f141a;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid #666;
+}
+
+.right {
+  position: absolute;
+  right: 0;
+  margin-top: 10px !important;
+  margin-right: 50px !important;
+}
+
+div.nav-item {
+  margin: 20px 20px 20px 0;
+  float: left;
+  vertical-align: middle;
+}
+div.nav-item img {
+  height: 44px;
+}
+div.nav-item a {
+  color: white;
+  text-decoration: none;
+}
+div.nav-item a:hover {
+  color: #f4d6d1;
+  text-decoration: none;
+}
+
+div.nav-item:first-child {
+  margin: 20px;
+  padding-left: 100px;
+  position: relative;
+  padding-top: 3px;
+}
+
+/*# sourceMappingURL=navbar.css.map */

@@ -30,21 +30,16 @@ export default class itemsInList extends Component{
         this.setState({items})
     }
 
-    addItemForm(){
-        console.log("Yay")
-    }
-
-
     renderGettingStarted(){
         return <div className={"text-center"}>To add items to your wishlist, click the plus button.</div>
     }
 
     renderItems() {
         //Renders page with lists
-        if (this.state.items !== 0) {
+        if (this.state.items.length !== 0) {
+            console.log(this.state.items)
             return (
                 <Fragment>
-                    <h1 className={"list-name"}>ljGHdjkfhvc</h1>
                     {this.state.items.map(item =>(
                         <Item key={item.id} item={item} onDelete={() => this.deleteItem(item)} isMine={this.state.isMine}/>
                     ))}
@@ -53,17 +48,17 @@ export default class itemsInList extends Component{
         }else{
             return this.renderGettingStarted()
         }
-
     }
 
     render() {
         if(this.state.isMine) {
             return (
-                <div className={"container"}>
+                <Fragment>
+                    <h1 className={"list-name"}>ljGHdjkfhvc</h1>
                     {this.renderItems()}
-                    {<AddButton onClick={() => this.addItemForm()}/>}
+                    {<AddButton onClick={() => this.addItem()}/>}
                     {<HelpText/>}
-                </div>
+                </Fragment>
             );
         }
     }
