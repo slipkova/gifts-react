@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from "react";
-import "../../style/styles.css"
+import "../style/styles.css"
 import Item from "./../items";
 import HelpText from "./../helpText";
 import AddButton from "./../buttons/addButton";
@@ -7,7 +7,7 @@ import AddButton from "./../buttons/addButton";
 
 
 //This component renders the content of "list" page
-export default class itemsInList extends Component{
+export default class MyList extends Component{
     state = {
         items: [
             { id: 1, name: "Dog"},
@@ -25,7 +25,7 @@ export default class itemsInList extends Component{
         this.setState({items})
     }
 
-    deleteItem = (currItem) => {
+    deleteItem = currItem => {
         const items = this.state.items.filter(i => i.id !== currItem.id)
         this.setState({items})
     }
