@@ -1,15 +1,18 @@
-$redPrimary: #4f141a;
+$redPrimary: #68392f;
 $borderGray: 1px solid rgba(0,0,0,.2);
-$yellow: #ffd500;
+$linkHover: #f1e3e0;
 
-.navbar{
+.navbar {
   background-color: $redPrimary;
-  a{
+  a {
     color: white;
-
   }
+  a:target{
+    color: white;
+  }
+
   a:hover{
-    color: pink !important;
+    color: $linkHover !important;
   }
   ul:first-child{
     margin-left: 50px;
@@ -18,4 +21,7 @@ $yellow: #ffd500;
     margin-right: 50px;
   }
 
+}
+.nav-link, .nav-link:focus{
+  color: white !important;
 }

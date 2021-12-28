@@ -1,17 +1,24 @@
 .navbar {
-  background-color: #4f141a;
+  background-color: #68392f;
 }
 .navbar a {
   color: white;
 }
+.navbar a:target {
+  color: white;
+}
 .navbar a:hover {
-  color: pink !important;
+  color: #f1e3e0 !important;
 }
 .navbar ul:first-child {
   margin-left: 50px;
 }
 .navbar ul:last-child {
   margin-right: 50px;
+}
+
+.nav-link, .nav-link:focus {
+  color: white !important;
 }
 
 /*# sourceMappingURL=navbar.css.map */
