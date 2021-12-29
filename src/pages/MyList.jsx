@@ -37,7 +37,6 @@ export default class MyList extends Component{
     renderItems() {
         //Renders page with lists
         if (this.state.items.length !== 0) {
-            console.log(this.state.items)
             return (
                 <Fragment>
                     {this.state.items.map(item =>(
