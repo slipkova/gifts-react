@@ -1,14 +1,16 @@
 import React, {Component} from "react";
-import DeleteButton from "./buttons/deleteButton";
+import IconButton from "./buttons/iconButton";
+import {getIcon} from "../services/themeService";
 
 export default class List extends Component{
 
     render(){
-        return(
+        const { list } = this.props
+         return(
             <div className={"item-in-list"}>
-                <i className={this.props.list.icon + " list-icon"}/>
-                <div className={"item-name"}>{this.props.list.name}</div>
-                <DeleteButton onDelete={this.props.onDelete} />
+                <img src={{/*getIcon(list.icon.url)*/}}/>
+                <div className={"item-name"}>{list.title}</div>
+                <IconButton list={list} onPress={this.props.deleteList} type={"delete"}/>
             </div>
         );
     }
