@@ -1,7 +1,7 @@
 import React, {Component, createContext} from "react";
 import {setAuthToken} from "./../services/httpService";
 
-import {getLists} from "./../services/listService";
+import {deleteList, getLists} from "./../services/listService";
 import {getListIcons, getThemeColors} from "../services/themeService";
 
 
@@ -56,15 +56,27 @@ export class ListsProvider extends Component{
         this.setState({lists})
     }
 
-    deleteList = currList => {
+    deleteList = async currList => {
+        const originalLists = this.state.lists
         const lists = this.state.lists.filter(i => i.id !== currList.id)
         this.setState({lists})
+        try{
+            await deleteList(currList.id)
+        }
+        catch (e) {
+            alert("Something failed while deleting list")
+            this.setState({lists: originalLists})
+        }
     }
 
     addItem(newItem){
         let newList = {...this.state.activeList}
         newList.items = this.state.activeList.items += newItem
         this.setState({activeList: newList})
+    }
+
+    tryCatch(){
+        return 0
     }
 
     deleteItem = currItem => {
