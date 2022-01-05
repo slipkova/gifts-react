@@ -1,4 +1,5 @@
 $fontColor: #452600;
+$redPrimary: #68392f;
 
 h1{
   color: $fontColor;
@@ -35,15 +36,25 @@ h1{
 
 .add-item-btn{
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 22px;
+  font-size: 30px !important;
+  color: $fontColor;
   margin: {
     top: 20px;
+    left: auto;
+    right: auto;
+
   }
 }
 
 .list-icon{
   margin: 5px;
   color: darkblue;
+}
+
+.fa-rotate-45 {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
 }

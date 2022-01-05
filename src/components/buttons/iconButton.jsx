@@ -1,10 +1,11 @@
 import React, {Component} from "react";
 
-
+//In props, you need to pass type="delete", "add", or "edit"
 export default class IconButton  extends Component{
     styles = {
         delete: ["far fa-times-circle", "del-item-btn"],
-        edit: [""]
+        edit: [""],
+        add: ["far fa-times-circle fa-rotate-45", "add-item-btn"],
     }
 
     render(){

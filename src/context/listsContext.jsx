@@ -3,6 +3,7 @@ import {setAuthToken} from "./../services/httpService";
 
 import {deleteList, getLists} from "./../services/listService";
 import {getListIcons, getThemeColors} from "../services/themeService";
+import {createList} from "../services/listService";
 
 
 const ListsContext = createContext()
@@ -50,10 +51,17 @@ export class ListsProvider extends Component{
         },
     })
 
-    addList(newList){
+    async addList(newList) {
+        const originalLists = this.state.lists
         let lists = [...this.state.lists]
         lists += newList
         this.setState({lists})
+        try {
+            await createList(newList)
+        } catch (e) {
+            alert("Something failed while creating list")
+            this.setState({lists: originalLists})
+        }
     }
 
     deleteList = async currList => {
@@ -73,10 +81,6 @@ export class ListsProvider extends Component{
         let newList = {...this.state.activeList}
         newList.items = this.state.activeList.items += newItem
         this.setState({activeList: newList})
-    }
-
-    tryCatch(){
-        return 0
     }
 
     deleteItem = currItem => {

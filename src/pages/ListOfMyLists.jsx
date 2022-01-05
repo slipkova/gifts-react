@@ -1,21 +1,41 @@
 import React, {Component, Fragment} from "react";
 import List from "../components/list";
 import {ListsConsumer} from "../context/listsContext";
+import ListPopupForm from "../components/forms/AddListPopupForm";
+import IconButton from "../components/buttons/iconButton";
 
 
 export default class ListOfMyLists extends Component{
+    state = {
+        activeListForm: false,
+    };
+
+    addListForm = () =>{
+        const value = true
+        this.setState({activeListForm: value})
+    }
+
+    delListForm = () =>{
+        const value = false
+        this.setState({activeListForm: value})
+    }
 
     render() {
 
         return(
-            <ListsConsumer>
-                {listsContext => {
-                    const { lists, deleteList } = listsContext
-                    return lists.map(list =>(
-                            <List key={list.id} list={list} deleteList={() => deleteList(list)}/>
-                        ))
-                }}
-            </ListsConsumer>
+            <Fragment>
+                <ListsConsumer>
+                    {listsContext => {
+                        const { lists, deleteList } = listsContext
+                        return lists.map(list =>(
+                                <List key={list.id} list={list} deleteList={() => deleteList(list)}/>
+                            ))
+
+                    }}
+                </ListsConsumer>
+                <IconButton type={"add"} onPress={this.addListForm}/>
+                <ListPopupForm trigger={this.state.activeListForm} onPress={this.delListForm}/>
+            </Fragment>
         )
     }
 }
