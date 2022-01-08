@@ -51,4 +51,8 @@ h1 {
   transform: rotate(45deg);
 }
 
+.login-btn {
+  margin-top: 20px;
+}
+
 /*# sourceMappingURL=styles.css.map */

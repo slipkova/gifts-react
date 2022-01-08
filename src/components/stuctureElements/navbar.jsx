@@ -26,7 +26,7 @@ export default class NavBar extends Component{
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/profile">
+                        <Link className="nav-link" to="/login">
                             <i className="far fa-user-circle"/>
                         </Link>
                     </li>

@@ -20,6 +20,10 @@ export default class ListOfMyLists extends Component{
         this.setState({activeListForm: value})
     }
 
+    addList(){
+
+    }
+
     render() {
 
         return(
@@ -34,7 +38,11 @@ export default class ListOfMyLists extends Component{
                     }}
                 </ListsConsumer>
                 <IconButton type={"add"} onPress={this.addListForm}/>
-                <ListPopupForm trigger={this.state.activeListForm} onPress={this.delListForm}/>
+                <ListsConsumer>
+                    {listContext => {
+                        return <ListPopupForm trigger={this.state.activeListForm} onPress={this.addList}/>
+                    }}
+                </ListsConsumer>
             </Fragment>
         )
     }
