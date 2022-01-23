@@ -11,8 +11,9 @@ export default class Input extends Component{
                     onChange={this.props.onChange}
                     className={"form-control"}
                     id={this.props.name}
-                    type={"text"}
+                    type={this.props.type || "text"}
                 />
+                {this.props.error && <div className={"alert alert-danger"}>{this.props.error}</div>}
             </div>
         )
     }

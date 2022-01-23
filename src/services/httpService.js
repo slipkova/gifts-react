@@ -1,5 +1,5 @@
 import { create } from "apisauce";
-export const BASE_URL = "http://localhost:8000/";
+export const BASE_URL = "http://localhost:9000/";
 
 const client = create({
   baseURL: BASE_URL,

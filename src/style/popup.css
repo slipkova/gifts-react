@@ -22,5 +22,8 @@
   bottom: 16px;
   right: 16px;
 }
+.popup-inner .form-control {
+  margin-bottom: 30px;
+}
 
 /*# sourceMappingURL=popup.css.map */

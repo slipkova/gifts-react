@@ -21,4 +21,8 @@
   color: white !important;
 }
 
+.nav-item i {
+  padding-left: 5px;
+}
+
 /*# sourceMappingURL=navbar.css.map */

@@ -19,6 +19,14 @@ h1{
     right: 20px;
   }
   position: relative;
+  display: flex;
+
+  a{
+    display: flex;
+    margin-left: 15px;
+    align-items: center;
+    text-decoration: none;
+  }
 }
 
 .item-name{
@@ -47,9 +55,20 @@ h1{
 }
 
 .list-icon{
-  margin: 5px;
-  color: darkblue;
+  height: 35px;
+  width: 35px;
+  background-color: darkblue;
+  border-radius: 50%;
+  padding: 2px;
+  display: flex;
+  img{
+    height: 25px;
+    align-items: center;
+    margin: auto;
+  }
 }
+
+
 
 .fa-rotate-45 {
   -webkit-transform: rotate(45deg);

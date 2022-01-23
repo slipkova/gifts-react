@@ -16,16 +16,13 @@ export class ListsProvider extends Component{
         themes: [],
     }
 
-    async componentDidMount() {
-        await setAuthToken("22b5351adc434066283aae83d6dca4596ced45ac");
+    init = async () => {
         //Gets all available icons
         const iconRes = await getListIcons()
         if (iconRes.ok) this.setState({icons: iconRes.data})
         //Gets all available themes
         const themeRes = await getThemeColors()
         if (themeRes.ok) this.setState({themes: themeRes.data})
-
-
     }
 
     async componentDidUpdate(prevProps, prevState, snapshot) {
@@ -51,13 +48,14 @@ export class ListsProvider extends Component{
         },
     })
 
-    async addList(newList) {
+    addList = async newList => {
         const originalLists = this.state.lists
-        let lists = [...this.state.lists]
-        lists += newList
-        this.setState({lists})
         try {
             await createList(newList)
+            const listRes = await getLists()
+            if (listRes.ok){
+                this.setState({lists: listRes.data.map(list => this.getFormatedList(list))})
+            }
         } catch (e) {
             alert("Something failed while creating list")
             this.setState({lists: originalLists})
@@ -96,6 +94,7 @@ export class ListsProvider extends Component{
             deleteItem: this.deleteItem,
             addList: this.addList,
             deleteList: this.deleteList,
+            init: this.init,
             ...this.state
         }
         return(

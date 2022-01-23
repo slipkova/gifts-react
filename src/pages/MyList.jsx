@@ -1,8 +1,9 @@
 import React, {Component, Fragment} from "react";
 import "../style/styles.css"
-import Item from "./../items";
-import HelpText from "./../helpText";
-import AddButton from "./../buttons/addButton";
+import Item from "./../components/items";
+import HelpText from "./../components/helpText";
+import IconButton from "../components/buttons/iconButton";
+import {ListsConsumer, ListsProvider} from "../context/listsContext";
 
 
 
@@ -52,12 +53,12 @@ export default class MyList extends Component{
     render() {
         if(this.state.isMine) {
             return (
-                <Fragment>
+                <ListsConsumer>
                     <h1 className={"list-name"}>ljGHdjkfhvc</h1>
                     {this.renderItems()}
-                    {<AddButton onClick={() => this.addItem()}/>}
+                    {<IconButton onClick={() => this.addItem()} type={"add"}/>}
                     {<HelpText/>}
-                </Fragment>
+                </ListsConsumer>
             );
         }
     }
